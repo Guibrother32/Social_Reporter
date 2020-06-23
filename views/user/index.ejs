@@ -1,0 +1,47 @@
+<%- include('../includes/head.ejs')%>
+<link rel="stylesheet" href="/css/reportCard.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs')%>
+    <%if(isAuthenticated){%>
+    <h4 class="h4-welcome">Welcome <%=user%>!</h4>
+    <%}%>
+    <main>
+        <main>
+            <% if(reports.length>0){%>
+    <div class="grid">
+        <%for (let report of reports){%>
+        <article class="card report-item">
+            <header class="card__header">
+                <h1 class="report__title"><%=report.title%></h1>
+            </header>
+            <div class="card__image">
+                <img src="<%=report.image %>" alt="<%=report.title%>">
+            </div>
+            <div class="card__content">
+                <h2 class="card__content__location"><%=report.location%></h2>
+                <p class="card__content__description"><%=report.description%></p>
+                <p class="card__content__user">Reportado por: <%=report.userOfReport%></p>
+            </div>
+            <hr>
+            <div class="card__actions">
+                <h4 class="card__actions__likeCounter"><%=report.likeCount%></h4>
+                <a href="/likeReport/<%=report.idComplaint%>/<%=report.UserInfo_idPessoa%>/1" class="card__actions_arrow_up hvr-icon-bob <% if (report.isLike === 1) {%>  hvr-icon-bob-green  <% } %>">
+                    <i class="fa fa-chevron-up hvr-icon"></i>
+                </a>
+                <h4 class="card__actions__dislikeCounter"><%=report.dislikeCount%></h4>
+                <a href="/unlikeReport/<%=report.idComplaint%>/<%=report.UserInfo_idPessoa%>/1" class="card__actions_arrow_down hvr-icon-hang <% if (report.isDislike === 1) {%> hvr-icon-hang-red <% } %>">
+                    <i class="fa fa-chevron-down hvr-icon"></i>
+                </a>
+                
+            </div>
+        </article>
+        <% } %>
+    </div>
+    <% } else { %>
+    <h1>Não temos nenhuma reclamação ainda! :)</h1>
+    <% } %>
+    </main>
+    </main>
+    <%- include('../includes/footer.ejs')%>

@@ -1,0 +1,38 @@
+<%- include('../includes/head.ejs')%>
+    <link rel="stylesheet" href="/css/reportCard.css">
+</head>
+<body>
+    <%- include('../includes/navigation.ejs')%>
+    <%if(isAuthenticated){%>
+        <h4 class="h4-welcome">Welcome back <%=user%>!</h4>
+    <%}%>
+    <main>
+        <main>
+            <% if(reports.length>0){%>
+            <div class="grid">
+                <%for (let report of reports){%>
+                <article class="card report-item">
+                    <header class="card__header">
+                        <h1 class="report__title"><%=report.title%></h1>
+                    </header>
+                    <div class="card__image">
+                        <img src="<%=report.image %>" alt="<%=report.title%>">
+                    </div>
+                    <div class="card__content">
+                        <h2 class="card__content__location"><%=report.location%></h2>
+                        <p class="card__content__description"><%=report.description%></p>
+                    </div>
+                    <hr>
+                    <div class="card__actions">
+                        <a href="/editReport/<%=report.idComplaint%>" class="btn">EDIT</a>
+                        <a href="/deleteReport/<%=report.idComplaint%>" class="btn danger">DELETE</a>
+                    </div>
+                </article>
+                <% } %>
+            </div>
+            <% } else { %>
+                <h1>Você não tem nenhum report ainda! :)</h1>
+            <% } %>
+        </main>
+    </main>
+    <%- include('../includes/footer.ejs')%>

@@ -1,0 +1,49 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/reportForm.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs')%>
+    <main>
+        <form action="/report/sendreport" method="POST" enctype="multipart/form-data">
+            <div class="grid">
+                <article class="card product-item">
+                    <header class="card__header">
+                        <h1 class="product__title">
+                            Faça o Report abaixo
+                        </h1>
+                    </header>
+                    <div class="card__content">
+                        <div class="form-control2">
+                            <label for="title">Título: </label>
+                            <input type="text" name="title" id="title" maxlength="45" required>
+                        </div>
+                        <div class="form-control2">
+                            <label for="location">Local: </label>
+                            <input type="text" name="location" id="location" maxlength="30" required>
+                        </div>
+                        <div class="form-control2">
+                            <label for="description" class="descriptionLabel">Descrição:</label>
+                            <textarea id="description" name="description" rows="4" cols="26" maxlength="113"
+                                required></textarea>
+                        </div>
+                        <div class="form-control2">
+                            <label for="image">Imagem: </label>
+                            <input type="file" name="image" id="image" class="form-control2_inputFile" required>
+                            <!-- <label for="file">Choose a file</label> -->
+                        </div>
+
+                        <br>
+                        <br>
+                    </div>
+                    <hr>
+                    <div class="card__actions">
+                        <button class="btn" type="submit">Enviar</button>
+
+                    </div>
+                </article>
+            </div>
+            <input type="hidden" id="_csrf" name="_csrf" value="">
+        </form>
+    </main>
+    <%- include('../includes/footer.ejs') %>

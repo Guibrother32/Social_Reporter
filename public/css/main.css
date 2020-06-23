@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #e2e2e2;
+}
+
+main {
+  padding: 2rem 1rem;
+  margin: auto;
+}
+
+form {
+  display: inline;
+}
+
+.centered {
+  text-align: center;
+}
+
+.main-header {
+  width: 100%;
+  /* height: 4rem; */
+  top: 0;
+  left: 0;
+  background-color: #eb7100;
+  padding: 0 1.5rem;
+}
+
+.main-header__nav {
+  position: relative;
+  /* left: 73%; */
+  /* height: 100%; */
+  /* display: inline-block; */
+  /* align-items: center; */
+
+  /* display: flex; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-header__item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.main-header__item-list2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.main-header__item {
+  margin: 1rem;
+  padding: 0;
+}
+
+.main-header__item a,
+.main-header__item button {
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  border: none;
+  background-color:transparent;
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(71, 71, 71);
+  font-weight:600;
+}
+
+.main-header__item a:hover,
+.main-header__item a:active,
+.main-header__item a.active,
+.main-header__item button:hover {
+  color: #ffffff;
+}
+
+
+
+.h4-welcome {
+  position: absolute;
+  margin-top: 4.5rem;
+  margin-left: 2.5rem;
+  border: 1.5px solid black;
+  padding: 0.5rem;
+  border-radius: 3px;
+
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+}
+
+.h4-welcome:hover,
+.h4-welcome:focus,
+.h4-welcome:active {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+/*----------------------------------------footer-styles---------------------------------------*/
+#footer {
+  background-color: rgb(238, 237, 237);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  margin-top: auto;
+  height: 2.3rem;
+}
+#footer p {
+  color: rgb(153, 152, 152);
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  margin: 0;
+  text-align: center;
+  text-transform: none;
+}
+.footerP {
+  font-size: 8px;
+}
+
+@media (max-width: 1000px){
+  body{
+    width: 100vw;
+    height: 100vh;
+  }
+  .main-header{
+    width: 123vw;
+    height:3.8rem;
+  }
+  #footer{
+    width: 123vw;
+  }
+}

@@ -1,0 +1,35 @@
+<header class="main-header">
+
+    <nav class="main-header__nav">
+        <ul class="main-header__item-list2">
+            <li class="main-header__item">
+                <a class="<%= path === '/' ? 'active' : '' %>" href="/">Problems</a>
+            </li>
+            <%if(isAuthenticated){%>
+            <li class="main-header__item">
+                <a class="<%= path === '/report' ? 'active' : '' %>" href="/report">Report</a>
+            </li>
+            <%}%>   
+        </ul>
+        <ul class="main-header__item-list">
+            <%if(!isAuthenticated){%>
+                <li class="main-header__item">
+                    <a class="<%= path === '/user/login' ? 'active' : '' %>" href="/user/login">Login</a>
+                </li>
+                <li class="main-header__item">
+                    <a class="<%= path === '/user/signup' ? 'active' : '' %>" href="/user/signup">Signup</a>
+                </li>
+            <%}else{%>
+                <li class="main-header__item">
+                    <a class="<%= path === '/myReports' ? 'active' : ''%>" href="/myreports">My Reports</a>
+                </li>
+                <li class="main-header__item">
+                    <form action="/user/logout" method="POST">
+                        <input type="hidden" id="_csrf" name="_csrf" value="">
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
+            <%}%>   
+        </ul>
+    </nav>
+</header>

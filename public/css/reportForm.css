@@ -1,0 +1,152 @@
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  background-color: white;
+  border-radius: 3px;
+  width: 380px;
+  margin: 10px 8px;
+}
+
+.card__header {
+  padding: .8rem;
+  text-align: center;
+  /* height: 92px; */
+}
+
+.card__image {
+  width: 100%;
+}
+
+.card__image img {
+  width: 100%;
+  height: 20rem;
+}
+
+.card__content {
+  padding: 5px 10px 0px 22px;
+  /* height: 75px; */
+  /* position: relative; */
+}
+
+.card__header h1,
+.card__content h1,
+.card__content h2,
+.card__content p {
+  margin: 0;
+}
+
+.card__content__location{
+  font-size: 1rem;
+}
+.card__content__description{
+  font-size: .9rem;
+}
+.card__content__user{
+  /* position: absolute;
+  bottom: 0;
+  right: 5px; */
+  margin-top: 8px !important;
+  font-size: .7rem;
+  /* text-align: end; */
+  color: rgb(131, 131, 131);
+}
+/* .form-control2_inputFile{
+  width: .1px;
+  height: .1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute; /*make sure it doesnt interfere on the sibling elements
+} */
+
+.form-control2 image{
+  color: red;
+}
+
+.card__actions {
+  padding: .8rem;
+  text-align: center;
+}
+
+.card__actions button,
+.card__actions a {
+  margin: 0 0.25rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  text-decoration: none;
+  font: inherit;
+  border: 1px solid #00695c;
+  color: #00695c;
+  background: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #00695c;
+  color: white;
+}
+
+.btn.danger {
+  color:#ad0000;
+  border-color: #ad0000;
+}
+
+.btn.danger:hover,
+.btn.danger:active {
+  background: #ad0000;
+  color: white;
+}
+
+/* .form-control2 {
+  width: 19rem;
+} */
+.form-control2 label {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 85px;
+}
+
+.form-control2 input {
+  /* float: right; */
+  display: inline-block;
+  border: 0.5px solid rgb(187, 183, 183);
+  font: inherit;
+  font-size: small;
+  border-radius: 2px;
+  margin: 0.3rem 0px;
+  width: 235px;
+}
+.form-control2 #description{
+  display: inline-block;
+  resize: none;
+  border: 0.5px solid rgb(187, 183, 183);
+  font: inherit;
+  font-size: small;
+  border-radius: 2px;
+  margin: 0.3rem 0px;
+  width: 235px;
+  margin-left: 5.6rem;
+}
+.form-control2 .descriptionLabel{
+  position: absolute;
+}
+
+
+@media (max-width: 1000px){
+  body{
+    width: 100vw;
+    height: 100vh;
+  }
+}
